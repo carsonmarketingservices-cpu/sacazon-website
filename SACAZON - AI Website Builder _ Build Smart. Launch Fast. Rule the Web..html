@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SACAZON — the next-gen AI website builder. Create your dream website instantly. Try it free for 7 days.">
+    <meta name="keywords" content="AI website builder, drag-and-drop site builder, no-code builder, SACAZON, best AI web builder 2025">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="SACAZON - Build Smart. Launch Fast. Rule the Web.">
+    <meta property="og:description" content="Design Smarter, Launch Faster — with SACAZON AI. Instantly create professional websites powered by smart AI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sacazon.com">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SACAZON - Build Smart. Launch Fast. Rule the Web.">
+    <meta name="twitter:description" content="Design Smarter, Launch Faster — with SACAZON AI. Instantly create professional websites powered by smart AI.">
+    
+    <title>SACAZON - AI Website Builder | Build Smart. Launch Fast. Rule the Web.</title>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23007BFF'/%3E%3Cstop offset='100%25' style='stop-color:%234FC3F7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23grad)'/%3E%3Cpath d='M30 30 L70 30 L70 70 L30 70 Z M50 20 L60 35 L40 35 Z' fill='%2300E5FF'/%3E%3C/svg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #F8F9FA;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #007BFF 0%, #4FC3F7 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #00E5FF;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            position: relative;
+        }
+        
+        .logo-icon::after {
+            content: '⚡';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0A2E5D 0%, #007BFF 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg width="100" height="100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h100v100H0z" fill="none"/%3E%3Cpath d="M50 10l5 15h15l-12 10 5 15-13-10-13 10 5-15-12-10h15z" fill="%2300E5FF" opacity="0.1"/%3E%3C/svg%3E') repeat;
+            opacity: 0.3;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00E5FF 0%, #4FC3F7 100%);
+            color: #0A2E5D;
+            padding: 18px 45px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0, 229, 255, 0.4);
+            animation: fadeInUp 1.2s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 229, 255, 0.6);
+        }
+        
+        .social-proof {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.4s ease;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: #0A2E5D;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #007BFF;
+        }
+        
+        .feature-card p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #F8F9FA 0%, #E3F2FD 100%);
+        }
+        
+        .bonus-tip {
+            background: linear-gradient(135deg, #FFD700 0%, #00E5FF 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 50px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.3);
+        }
+        
+        .bonus-tip h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #0A2E5D;
+        }
+        
+        .bonus-tip p {
+            font-size: 18px;
+            color: #0A2E5D;
+            line-height: 1.8;
+        }
+        
+        .comparison-table {
+            overflow-x: auto;
+            margin-bottom: 60px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #E3F2FD;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #007BFF 0%, #4FC3F7 100%);
+            color: white;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        td:first-child {
+            font-weight: 600;
+            color: #0A2E5D;
+        }
+        
+        td:not(:first-child) {
+            text-align: center;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .pricing-card.popular {
+            border: 3px solid #00E5FF;
+            box-shadow: 0 10px 40px rgba(0, 229, 255, 0.3);
+        }
+        
+        .pricing-card.best-value {
+            border: 3px solid #FFD700;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #00E5FF 0%, #007BFF 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
+        }
+        
+        .best-value .pricing-badge {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+        }
+        
+        .pricing-card h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #0A2E5D;
+        }
+        
+        .price {
+            font-size: 48px;
+            color: #007BFF;
+            margin: 20px 0;
+            font-weight: 700;
+        }
+        
+        .price span {
+            font-size: 24px;
+            color: #666;
+        }
+        
+        .trial-text {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .features-list {
+            text-align: left;
+            margin: 30px 0;
+        }
+        
+        .features-list li {
+            padding: 10px 0;
+            color: #666;
+            list-style: none;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00E5FF;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .paypal-button {
+            margin-top: 20px;
+        }
+        
+        .microcopy {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #999;
+            font-style: italic;
+        }
+        
+        /* Affiliate Section */
+        .affiliate {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0A2E5D 0%, #007BFF 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .affiliate h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .affiliate p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .affiliate-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .affiliate-button {
+            background: #00E5FF;
+            color: #0A2E5D;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .affiliate-button:hover {
+            background: #4FC3F7;
+            transform: translateY(-3px);
+        }
+        
+        .social-share {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        
+        .social-icon:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .testimonials-carousel {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background: #F8F9FA;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            display: none;
+        }
+        
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #007BFF 0%, #4FC3F7 100%);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+        }
+        
+        .testimonial-text {
+            font-size: 18px;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #0A2E5D;
+        }
+        
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .dot.active {
+            background: #007BFF;
+            width: 30px;
+            border-radius: 6px;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 100px 0;
+            background: #F8F9FA;
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            padding: 25px;
+            font-weight: 600;
+            color: #0A2E5D;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: #F8F9FA;
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            color: #666;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px;
+            max-height: 500px;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        /* About */
+        .about {
+            padding: 100px 0;
+            background: white;
+            text-align: center;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 100px 0;
+            background: #F8F9FA;
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .contact-info a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            margin: 10px 0;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #0A2E5D;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E3F2FD;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #007BFF;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .submit-button {
+            background: linear-gradient(135deg, #007BFF 0%, #4FC3F7 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: #0A2E5D;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 20px;
+            color: #00E5FF;
+        }
+        
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #00E5FF;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-social a {
+            display: inline-block;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* Affiliate Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 32px;
+            font-weight: 700;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+        
+        .modal-close:hover {
+            color: #333;
+        }
+        
+        .modal-content h2 {
+            color: #0A2E5D;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+        
+        .modal-content p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .affiliate-benefits {
+            background: #F8F9FA;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .affiliate-benefits h3 {
+            color: #007BFF;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .affiliate-benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .affiliate-benefits li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #333;
+        }
+        
+        .affiliate-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00E5FF;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #00E5FF 0%, #4FC3F7 100%);
+            color: #0A2E5D;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            .comparison-table {
+                font-size: 14px;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon"></div>
+                    SACAZON
+                </a>
+                <nav>
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Design Smarter, Launch Faster — with SACAZON AI.</h1>
+                <p>Instantly create professional websites powered by smart AI. No coding, no limits.</p>
+                <a href="#pricing" class="cta-button">Start Your 7-Day Free Trial</a>
+                <div class="social-proof">
+                    <div class="badge">🚀 Trusted by 10,000+ Creators</div>
+                    <div class="badge">⚡ Launch in Minutes</div>
+                    <div class="badge">🌟 4.9/5 Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Powerful Features for Modern Web Creators</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>AI Website Builder</h3>
+                    <p>Instantly generate responsive designs with cutting-edge artificial intelligence technology.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Drag & Drop Editor</h3>
+                    <p>Customize layouts with ease using our intuitive visual editor. No coding required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>SEO & Analytics Tools</h3>
+                    <p>Track your website performance and optimize for search engines automatically.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global Hosting</h3>
+                    <p>Fast, secure servers worldwide ensure your site loads quickly everywhere.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#pricing" class="cta-button">Build My Website Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">SACAZON Pricing Plans – Choose Your AI Website Builder Plan</h2>
+            
+            <div class="bonus-tip">
+                <h3>💡 BONUS TIP</h3>
+                <p>Most successful creators choose the Pro or Enterprise plan to command the full SACAZON experience. Unlock 3X more templates, faster AI builds, priority support, and exclusive affiliate earnings. <strong>Serious innovators don't just build — they scale.</strong></p>
+            </div>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Starter</th>
+                            <th>Pro</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AI Website Builder</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Custom Templates</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>SEO & Analytics Tools</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Priority Support</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Team Collaboration</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Custom Domain Integration</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Affiliate Bonus Access</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Dedicated Account Manager</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pricing-cards">
+                <!-- Starter Plan -->
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$19<span>/mo</span></div>
+                    <div class="trial-text">After 7-Day Free Trial</div>
+                    <ul class="features-list">
+                        <li>Basic AI Builder</li>
+                        <li>50+ Templates</li>
+                        <li>Email Support</li>
+                        <li>Mobile Responsive</li>
+                        <li>SSL Security</li>
+                    </ul>
+                    <div class="paypal-button">
+                        <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-3LX38935823969719NDQ3PQA" target="_blank" class="cta-button" style="display: block; text-align: center;">Subscribe Now</a>
+                    </div>
+                    <p class="microcopy">Try it free for 7 days — no risk.</p>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="pricing-card popular">
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3>Pro</h3>
+                    <div class="price">$49<span>/mo</span></div>
+                    <ul class="features-list">
+                        <li>Full AI Features</li>
+                        <li>Advanced Templates</li>
+                        <li>SEO & Analytics</li>
+                        <li>Priority Support</li>
+                        <li>Custom Domain</li>
+                        <li>Affiliate Access</li>
+                    </ul>
+                    <div class="paypal-button">
+                        <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-3LX38935823969719NDQ3PQA" target="_blank" class="cta-button" style="display: block; text-align: center;">Subscribe Now</a>
+                    </div>
+                    <p class="microcopy">Level up your brand with advanced customization and pro-tier tools.</p>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card best-value">
+                    <div class="pricing-badge">Best Value</div>
+                    <h3>Enterprise</h3>
+                    <div class="price">$99<span>/mo</span></div>
+                    <ul class="features-list">
+                        <li>Everything in Pro</li>
+                        <li>Team Collaboration</li>
+                        <li>API Access</li>
+                        <li>Custom Domains (Unlimited)</li>
+                        <li>Dedicated Account Manager</li>
+                        <li>White Label Options</li>
+                        <li>Full Affiliate Control</li>
+                    </ul>
+                    <div class="paypal-button">
+                        <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-6P54592760127381BNDQ36RY" target="_blank" class="cta-button" style="display: block; text-align: center;">Subscribe Now</a>
+                    </div>
+                    <p class="microcopy">Dominate your niche with complete access and full affiliate program control.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Affiliate Section -->
+    <section class="affiliate">
+        <div class="container">
+            <h2>Share SACAZON and Earn Rewards</h2>
+            <p>Join our affiliate program and earn 25% recurring commission on every referral!</p>
+            <div class="affiliate-buttons">
+                <a href="#" class="affiliate-button" id="openAffiliateModal">Join Affiliate Program</a>
+            </div>
+            <p style="margin: 30px 0 20px; font-size: 18px;">Share SACAZON Now:</p>
+            <div class="social-share">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.sacazon.com" target="_blank" class="social-icon" title="Share on Facebook">f</a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.sacazon.com" target="_blank" class="social-icon" title="Share on LinkedIn">in</a>
+                <a href="https://twitter.com/intent/tweet?url=https://www.sacazon.com&text=Check%20out%20SACAZON%20AI%20Website%20Builder!" target="_blank" class="social-icon" title="Share on X">𝕏</a>
+                <a href="https://wa.me/?text=Check%20out%20SACAZON%20AI%20Website%20Builder!%20https://www.sacazon.com" target="_blank" class="social-icon" title="Share on WhatsApp">📱</a>
+                <a href="mailto:?subject=Check%20out%20SACAZON&body=I%20found%20this%20amazing%20AI%20website%20builder:%20https://www.sacazon.com" class="social-icon" title="Share via Email">✉</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Affiliate Modal -->
+    <div id="affiliateModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeModal">&times;</span>
+            <h2>🚀 Join SACAZON Affiliate Program</h2>
+            <p>Start earning 25% recurring commissions on every successful referral. It's free to join and easy to get started!</p>
+            
+            <div class="affiliate-benefits">
+                <h3>Why Join Our Affiliate Program?</h3>
+                <ul>
+                    <li>Earn 25% recurring monthly commission</li>
+                    <li>Get paid via PayPal automatically</li>
+                    <li>Access to exclusive promotional materials</li>
+                    <li>Real-time tracking dashboard</li>
+                    <li>Dedicated affiliate support team</li>
+                    <li>No minimum payout threshold</li>
+                </ul>
+            </div>
+            
+            <form id="affiliateForm" class="contact-form">
+                <div class="form-group">
+                    <label for="affiliateName">Full Name *</label>
+                    <input type="text" id="affiliateName" name="affiliateName" required>
+                </div>
+                <div class="form-group">
+                    <label for="affiliateEmail">Email Address *</label>
+                    <input type="email" id="affiliateEmail" name="affiliateEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="affiliateWebsite">Website/Social Media Profile</label>
+                    <input type="text" id="affiliateWebsite" name="affiliateWebsite" placeholder="https://yourwebsite.com">
+                </div>
+                <div class="form-group">
+                    <label for="affiliateAudience">How will you promote SACAZON? *</label>
+                    <textarea id="affiliateAudience" name="affiliateAudience" required placeholder="Tell us about your audience and promotion strategy..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="paypalEmail">PayPal Email (for payments) *</label>
+                    <input type="email" id="paypalEmail" name="paypalEmail" required>
+                </div>
+                <button type="submit" class="submit-button">Submit Application</button>
+            </form>
+            
+            <div id="affiliateSuccess" class="success-message">
+                ✓ Application submitted successfully! We'll review your application and send you affiliate access within 24-48 hours.
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Users Say</h2>
+            <div class="testimonials-carousel">
+                <div class="testimonial active">
+                    <div class="testimonial-avatar">SM</div>
+                    <p class="testimonial-text">"SACAZON transformed my business. I launched my website in under an hour and started getting customers the same day. The AI builder is incredible!"</p>
+                    <p class="testimonial-author">Sarah Mitchell, Founder @ DesignHub</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-avatar">JC</div>
+                    <p class="testimonial-text">"As a non-technical entrepreneur, SACAZON was exactly what I needed. Beautiful templates, easy customization, and the support team is fantastic."</p>
+                    <p class="testimonial-author">James Chen, CEO @ TechStart</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-avatar">ER</div>
+                    <p class="testimonial-text">"I've tried many website builders, but SACAZON's AI capabilities are unmatched. It understands what I need and delivers every time."</p>
+                    <p class="testimonial-author">Emma Rodriguez, Creative Director</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-avatar">MA</div>
+                    <p class="testimonial-text">"The affiliate program alone pays for my subscription. Plus, my clients love the websites I build for them using SACAZON. Win-win!"</p>
+                    <p class="testimonial-author">Michael Anderson, Web Consultant</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-avatar">LP</div>
+                    <p class="testimonial-text">"From startup to enterprise, SACAZON scaled with us perfectly. The team collaboration features are a game-changer for our agency."</p>
+                    <p class="testimonial-author">Lisa Park, Agency Owner</p>
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="showTestimonial(0)"></span>
+                    <span class="dot" onclick="showTestimonial(1)"></span>
+                    <span class="dot" onclick="showTestimonial(2)"></span>
+                    <span class="dot" onclick="showTestimonial(3)"></span>
+                    <span class="dot" onclick="showTestimonial(4)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How does the 7-day free trial work?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Start your free trial today with no credit card required for the Starter plan. You'll have full access to all features for 7 days. After the trial ends, you'll be charged based on your selected plan. Cancel anytime during the trial with no charges.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I cancel my subscription anytime?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! You can cancel your SACAZON subscription at any time through your account dashboard. There are no cancellation fees, and you'll retain access until the end of your billing period.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What payment methods do you accept?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept all major payment methods through PayPal, including credit cards, debit cards, and PayPal balance. All transactions are secure and encrypted.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How does SACAZON compare to other website builders?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SACAZON uses advanced AI technology to create smarter, faster, and more professional websites than traditional builders. Our drag-and-drop editor is more intuitive, our templates are more modern, and our AI understands your brand to deliver customized results. Plus, we offer built-in SEO tools and analytics that competitors charge extra for.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need coding knowledge to use SACAZON?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Not at all! SACAZON is designed for everyone, from complete beginners to experienced developers. Our AI builder and drag-and-drop interface make it easy to create professional websites without writing a single line of code.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What kind of support do you offer?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Starter plan users get email support with 24-hour response time. Pro plan users receive priority support with faster response times. Enterprise users get a dedicated account manager for personalized assistance. We also have comprehensive documentation and video tutorials available 24/7.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">The Future of Web Creation is Here</h2>
+                <p>SACAZON helps anyone — from startups to enterprises — design and launch stunning websites effortlessly. Our mission is to democratize web creation by combining cutting-edge AI technology with intuitive design tools. Whether you're building your first website or your hundredth, SACAZON empowers you to create faster, smarter, and better than ever before. Join thousands of successful creators who have already discovered the power of AI-driven web design.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <a href="mailto:support@sacazon.com">📧 support@sacazon.com</a>
+                    <a href="mailto:contact@sacazon.com">💼 contact@sacazon.com</a>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SACAZON</h4>
+                    <p>Build Smart. Launch Fast. Rule the Web.</p>
+                    <div class="footer-social">
+                        <a href="https://linkedin.com" target="_blank" title="LinkedIn">in</a>
+                        <a href="https://youtube.com" target="_blank" title="YouTube">▶</a>
+                        <a href="https://twitter.com" target="_blank" title="X">𝕏</a>
+                        <a href="https://instagram.com" target="_blank" title="Instagram">📷</a>
+                        <a href="https://facebook.com" target="_blank" title="Facebook">f</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#">Affiliate Program</a>
+                    <a href="#">Templates</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact">Contact</a>
+                    <a href="mailto:support@sacazon.com">Help Center</a>
+                    <a href="#">Documentation</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Refund Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SACAZON. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Testimonials Carousel
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.dot');
+
+        function showTestimonial(index) {
+            testimonials.forEach(t => t.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Affiliate Modal
+        const affiliateModal = document.getElementById('affiliateModal');
+        const openModalBtn = document.getElementById('openAffiliateModal');
+        const closeModalBtn = document.getElementById('closeModal');
+
+        openModalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            affiliateModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            affiliateModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === affiliateModal) {
+                affiliateModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Affiliate Form Submission
+        document.getElementById('affiliateForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('affiliateName').value;
+            const email = document.getElementById('affiliateEmail').value;
+            const website = document.getElementById('affiliateWebsite').value;
+            const audience = document.getElementById('affiliateAudience').value;
+            const paypalEmail = document.getElementById('paypalEmail').value;
+            
+            const emailBody = `
+NEW AFFILIATE APPLICATION
+
+Name: ${name}
+Email: ${email}
+Website/Profile: ${website}
+PayPal Email: ${paypalEmail}
+
+Promotion Strategy:
+${audience}
+            `.trim();
+            
+            const mailtoLink = `mailto:contact@sacazon.com?subject=Affiliate%20Program%20Application%20-%20${encodeURIComponent(name)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Show success message
+            document.getElementById('affiliateSuccess').style.display = 'block';
+            document.getElementById('affiliateForm').style.display = 'none';
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Reset after 3 seconds
+            setTimeout(() => {
+                affiliateModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                document.getElementById('affiliateSuccess').style.display = 'none';
+                document.getElementById('affiliateForm').style.display = 'block';
+                document.getElementById('affiliateForm').reset();
+            }, 3000);
+        });
+
+        // Contact Form
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            const mailtoLink = `mailto:support@sacazon.com?subject=Contact from ${name}&body=${encodeURIComponent(message)}%0D%0A%0D%0AFrom: ${email}`;
+            window.location.href = mailtoLink;
+            
+            alert('Thank you for contacting us! Your default email client will open to send the message.');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
